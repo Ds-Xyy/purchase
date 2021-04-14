@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{common::header('登入')}">
+    <script>
+        function submitForm(){
+            $('#form').form('submit');
+        }
+
+        function clearForm(){
+            $('#form').form('clear');
+        }
+    </script>
+
+</head>
+<body>
+<!--使用EasyUI实现登录效果-->
+<div style="margin: 200px auto;width:500px;">
+    <div id="p" class="easyui-panel" title="登录"
+         style="width:500px;height:180px;padding:10px;background:#fafafa;"
+         data-options="iconCls:'icon-my',closable:true,
+                    collapsible:true">
+        <!--,minimizable:true,maximizable:true-->
+        <form id="loginForm" method="get">
+            <table align="center">
+                <tr>
+                    <td colspan="2" style="text-align: center;font-size: 20px;font-weight: bold">采购管理系统</td>
+                </tr>
+                <tr>
+                    <td>用户名：</td>
+                    <td><input type="text" name="userName"></td>
+                </tr>
+                <tr>
+                    <td>密码：</td>
+                    <td><input type="password" name="passWord"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <a style="margin-top: 5px;margin-left: -30px" id="submitBtn" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">登录</a>
+                    </td>
+                    <td colspan="2" align="center">
+                        <a style="margin-top: 5px;margin-left: -60px" id="zc"  th:href="@{/regist}" class="easyui-linkbutton" data-options="iconCls:'icon-ok'">注册</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    //获取路径
+    var pathName = window.document.location.pathname;
+    //截取，得到项目名称
+    var ctx = pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+$("#submitBtn").click(function(){
+    $("#loginForm").form("submit",{
+        url: ctx+"/user/userLogin",
+        dataType:"json",
+        onSubmit:function () {
+            //提交时的检测
+            // return false;
+        },
+        success:function (result) {
+            if(result == "error"){
+                //登录失败，回到登录页面
+                location.href = ctx+"/login";
+            }else if(result == "success"){
+                //登录成功，跳转主页
+                location.href = ctx + "/index";
+            }
+        }
+    })
+})
+
+
+</script>
+</html>

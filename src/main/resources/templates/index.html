@@ -1,19 +1,41 @@
-<html>
-	<head>
-		<title></title>
-		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-		<meta http-equiv="Cache-Control" content="no-store"/>
-		<meta http-equiv="Pragma" content="no-cache"/>
-		<meta http-equiv="Expires" content="0"/>
+<!DOCTYPE html>
 
-	</head>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{common::header('主页2')}">
+</head>
 
-	<frameset cols="250,*" framespacing="0" frameborder="0" style="border:0px">
-		<frame scrolling="no" noresize src="leftRequire.html" marginwidth="0" marginheight="0" name="menu">
-		<frameset rows="20,*" framespacing="0" frameborder="0" style="border:0px">
-			<frame scrolling="no" noresize src="bar.html" marginwidth="0" marginheight="0" name="bar">
-			<frame scrolling="no" noresize src="mainRequire.html" marginwidth="0" marginheight="0" name="main">
-		</frameset>
-	</frameset>
-	<noframes></noframes>
+	<!--<frameset cols="250,*" framespacing="0" frameborder="0" style="border:0px">-->
+		<!--<frame scrolling="no" noresize src="leftRequire.html" marginwidth="0" marginheight="0" name="menu">-->
+		<!--<frameset rows="20,*" framespacing="0" frameborder="0" style="border:0px">-->
+			<!--<frame scrolling="no" noresize src="bar.html" marginwidth="0" marginheight="0" name="bar">-->
+			<!--<frame scrolling="no" noresize src="mainRequire.html" marginwidth="0" marginheight="0" name="main">-->
+		<!--</frameset>-->
+	<!--</frameset>-->
+	<!--<noframes></noframes>-->
+
+
+<body class="easyui-layout">
+<!--<div th:href="@{/bar}" data-options="region:'north',border:false" style="height:63px;background:#B3DFDA;">-->
+    <!--<img style="position: absolute;top: 0;" th:src="@{/image/logo.png}">-->
+    <!--<div style="position: absolute;left: 320px;">-->
+        <!--<iframe width="415" scrolling="no" height="50" frameborder="0" allowtransparency="true" src="https://i.tianqi.com?c=code&id=12&icon=1&num=3&site=12"></iframe>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;上面右邊&ndash;&gt;-->
+    <!--<div style="position: absolute;right: 10px;top: 5px;">-->
+        <!--<div  th:href="@{/bar}"></div>-->
+    <!--</div>-->
+
+<!--</div>-->
+<!--北边-->
+<div th:href="@{/bar}"data-options="region:'north',title:'North Title',split:true" style="height:60px;background:#B3DFDA;"></div>
+<!--左边-->
+<div data-options="region:'west',title:'菜单'" th:href="@{/left}" style="width:200px;"></div>
+<!--中间-->
+<div data-options="region:'center',title:''">
+    <!--<div  th:href="@{/bar}"></div>-->
+    <div id="mytabs" class="easyui-tabs" data-options="fit:true" style="width:700px;height:250px">
+        <!--通过JS动态加载tabls中的标签-->
+    </div>
+</div>
+</body>
 </html>

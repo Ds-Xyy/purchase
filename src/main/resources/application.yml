@@ -10,3 +10,14 @@ server:
   servlet:
     context-path: /cg
   port: 81
+mybatis:
+  type-aliases-package: com.turing.purchase.entity
+ # mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+    content-type: text/html
+#    prefix: classpath:/templates/
+#    suffix: .html

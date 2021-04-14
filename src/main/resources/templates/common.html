@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="header(title)">
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title th:text="${title}"></title>
     <link th:href="@{/bootstrap-3.3.7-dist/css/bootstrap.min.css}" rel="stylesheet">
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-    <script th:src="@{/static/js/jquery.min.js}"></script>
+    <script th:src="@{/js/jquery.min.js}"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
     <script th:src="@{/bootstrap-3.3.7-dist/js/bootstrap.min.js}"></script>
 
     <!--easyui-->
-    <link rel="stylesheet" type="text/css" th:href="@{/static/js/jquery-easyui-1.8.5/themes/default/easyui.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/static/js/jquery-easyui-1.8.5/themes/icon.css}">
-    <script type="text/javascript" th:src="@{/static/js/jquery-easyui-1.8.5/jquery.easyui.min.js}"></script>
-    <script type="text/javascript" th:src="@{/static/js/easyui-lang-zh_CN.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/js/jquery-easyui-1.8.5/themes/default/easyui.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/js/jquery-easyui-1.8.5/themes/icon.css}">
+    <script type="text/javascript" th:src="@{/js/jquery-easyui-1.8.5/jquery.easyui.min.js}"></script>
+    <script type="text/javascript" th:src="@{/js/easyui-lang-zh_CN.js}"></script>
 </head>
 <body>
 
